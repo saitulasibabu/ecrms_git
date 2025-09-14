@@ -1,0 +1,115 @@
+/*custom css for ecrms*/
+
+.label {
+    float: left;
+    font-style: italic;
+    width: 100%;
+    
+    
+}
+.container {
+    background: none repeat scroll 0 0 #EFF5FB;
+    margin: 0 auto;
+    width: 1190px;
+    min-height: 100%;
+}
+/* Font related css of Header column of grid*/
+.ui-jqgrid-htable th div {
+    font-weight: bold;
+    text-align:left;
+}
+
+
+.ui-widget-content a {
+    color: #0066CC;
+}
+/* Border of Header column of Grid table*/
+.ui-widget-content .ui-state-default{
+
+border-right:gray 1px solid;
+
+}
+
+.ui-widget-content .ui-state-highlight
+{
+border:#aaaaaa 2px solid;
+
+}
+
+.ui-button-text-only{
+
+color: black;
+
+}
+.ui-widget-header {
+  border: 1px solid #aaaaaa;
+	color: #222222;
+  font-weight: bold;
+	background-attachment: scroll;
+	background-color: #D3CAD8;
+	background-position: 50% 50%;
+	background-repeat: repeat-x;
+	background-image: url("../vw/images/ui-bg_glass_65_d3cad8_1x400.png");
+ }
+ 
+.ui-button:hover {
+    
+    color:#0099FF;
+}
+
+.ui-button:focus {
+    
+    color:#0099FF;
+}
+.customizegrid {
+    border-right-color: inherit;
+    border-right-style: solid;
+    border-right-width: 1px;
+    text-align: center;
+}
+
+div.wwgrp{
+	float: left;
+	clear:none;
+	line-height: 1.2;
+	margin:0.8em 0 0.5em 0;
+}
+
+div.errorMessage{
+	font-weight: normal;	 
+}
+
+.center
+{
+	margin-left:auto;
+	margin-right:auto;
+	/* width: you would need to add this seperately! */
+}
+
+/* to fix the footer to bottom of the page.
+Refer: http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page
+*/
+html,
+body {
+   height:100%;
+}
+#page {
+   min-height:100%;
+   position:relative;
+}
+#content {
+   padding-bottom:20px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:20px;   /* Height of the footer */
+}
+.alertMessage{ background: #fbe3e4; color: #222222; border-color: #fbc2c4; }
+SELECT
+{ 
+border-bottom-width:2px;  
+}
+
+.ui-state-disabled{opacity: .80; filter:Alpha(Opacity=90); background-image: none; zoom:1; line-height:1.3}

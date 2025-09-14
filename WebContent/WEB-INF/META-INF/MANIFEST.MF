@@ -1,0 +1,103 @@
+Manifest-Version: 1.2
+Name: com/vw/security/rbs/RBSFormatVector.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: 86eZnJE4dgkjvBxLBdmk3Hl3jic=
+MD5-Digest: h75f2GdH3YDNeXg5tpHzDw==
+
+
+Name: com/vw/security/rbs/RBSLDAP.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: pwrfL43s4kxTNSDYDtO6qNlsa9c=
+MD5-Digest: KTY/GqdBi52eiNhaUl0Y6A==
+
+
+Name: com/vw/security/rbs/RBSFormatAttribute.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: IWOjrVmCmUNr97H7D/Tx63Ib/B4=
+MD5-Digest: 9QI3Vcdrpvv8R4rvAkEUvQ==
+
+
+Name: com/vw/security/rbs/LDAPChannel.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: 3XnoXWsKECGUPkkv2BLN6CcrQyE=
+MD5-Digest: qFDDcNmg2ED+UXBLBNZlow==
+
+
+Name: com/vw/security/rbs/RBSTest.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: 8RZlkLO2U0yN6L8VnNS0ec/H6rg=
+MD5-Digest: j8Vbb/43AZwx7yQ9+EO7PA==
+
+
+Name: com/vw/security/rbs/config.properties
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: z0OkjG42ii8hOQusN4ISvM9bYuo=
+MD5-Digest: qLF64nyKyTzzRXobz0wwBg==
+
+
+Name: com/vw/security/rbs/RBSApplication.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: i9f4I6lAvC0J6lqPl6ZdQSOBIvI=
+MD5-Digest: FaZbR1IChQl8Y9tfdOCYEw==
+
+
+Name: com/vw/security/rbs/RBSBase.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: Kye09EcrOVy+Wk5XOm/SnivDWmw=
+MD5-Digest: gxPxIzwqTrKWUoCR4d5PNg==
+
+
+Name: com/vw/security/rbs/RBSApplicationFunction.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: 1JBaz0m5shCLE2U3AmyDWU3MxCY=
+MD5-Digest: 0djZnZ9xt97vgEQmVJyvIg==
+
+
+Name: com/vw/security/rbs/Search.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: IFzwPywE77Z+68KnmZNw5LN1QA4=
+MD5-Digest: oHUCTh0FZePMU2zwt3yrsA==
+
+
+Name: com/vw/security/rbs/
+Sealed: True
+
+
+Name: com/vw/security/rbs/RBSConnectLDAP.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: XVXmlAYmWWFc1fagmvJ2YgZiqE8=
+MD5-Digest: KHZIkCnJgOSn10EPEX7UzA==
+
+
+Name: com/vw/security/rbs/UpdateLDAP.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: TV0TxVX+MuXVqyPYt+uxn2gvczs=
+MD5-Digest: ks/AK+OMT5Xb2u3SdC1Hkw==
+
+
+Name: com/vw/security/rbs/ReferralRebind.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: EsuA4ymaGTUW5G4TX7icJZdza+A=
+MD5-Digest: wBA7SQGHTdZm+814FYk3HA==
+
+
+Name: com/vw/security/rbs/RBSUser.class
+Java-Bean: False
+Digest-Algorithms: SHA MD5
+SHA-Digest: CSVmX7DVEgHC4V9/MuDkIja1smI=
+MD5-Digest: q4EGL0fxNGgaCpTF4VRRAA==
+
+
