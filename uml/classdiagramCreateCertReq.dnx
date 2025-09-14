@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_Gbt6wTFPEeGhDp2bH6SswA" type="Class" name="classdiagram">
+  <children xmi:id="_H45DYDFPEeGhDp2bH6SswA">
+    <children xmi:id="_H6lFcDFPEeGhDp2bH6SswA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_H6lFcTFPEeGhDp2bH6SswA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_H6mTkDFPEeGhDp2bH6SswA" type="Stereotype"/>
+    <children xmi:id="_H6pW4DFPEeGhDp2bH6SswA" type="Name"/>
+    <children xmi:id="_H6pW4TFPEeGhDp2bH6SswA" type="Parent"/>
+    <children xmi:id="_H6rMEDFPEeGhDp2bH6SswA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_H6rMETFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_H6saMDFPEeGhDp2bH6SswA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_H6saMTFPEeGhDp2bH6SswA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_H45DYTFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CreateCertRequestAction%5Bjcu%5Ename=CreateCertRequestAction.java%5Bjpack%5Ename=com.vwoa.ecrms.action.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H45DYjFPEeGhDp2bH6SswA" x="12046" y="1902" width="9602"/>
+  </children>
+  <children xmi:id="_MtD9ADFPEeGhDp2bH6SswA">
+    <children xmi:id="_MtFLIDFPEeGhDp2bH6SswA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_MtFLITFPEeGhDp2bH6SswA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_MtFyMDFPEeGhDp2bH6SswA" type="Stereotype"/>
+    <children xmi:id="_MtFyMTFPEeGhDp2bH6SswA" type="Name"/>
+    <children xmi:id="_MtFyMjFPEeGhDp2bH6SswA" type="Parent"/>
+    <children xmi:id="_MtGZQDFPEeGhDp2bH6SswA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_MtGZQTFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_MtGZQjFPEeGhDp2bH6SswA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_MtGZQzFPEeGhDp2bH6SswA" collapsed="true"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_MtD9ATFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CertRequestModel%5Bjcu%5Ename=CertRequestModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MtEkEDFPEeGhDp2bH6SswA" x="1268" y="9193"/>
+  </children>
+  <children xmi:id="_OUbjcDFPEeGhDp2bH6SswA">
+    <children xmi:id="_OUcKgDFPEeGhDp2bH6SswA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_OUcKgTFPEeGhDp2bH6SswA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_OUcxkDFPEeGhDp2bH6SswA" type="Stereotype"/>
+    <children xmi:id="_OUcxkTFPEeGhDp2bH6SswA" type="Kind"/>
+    <children xmi:id="_OUcxkjFPEeGhDp2bH6SswA" type="Name"/>
+    <children xmi:id="_OUdYoDFPEeGhDp2bH6SswA" type="Parent"/>
+    <children xmi:id="_OUd_sDFPEeGhDp2bH6SswA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_OUd_sTFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_OUd_sjFPEeGhDp2bH6SswA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_OUd_szFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_OUfN0DFPEeGhDp2bH6SswA" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_OUfN0TFPEeGhDp2bH6SswA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_OUbjcTFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=ICertRequestService%5Bjcu%5Ename=ICertRequestService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OUbjcjFPEeGhDp2bH6SswA" x="13948" y="12363"/>
+  </children>
+  <children xmi:id="_O4pDwDFPEeGhDp2bH6SswA">
+    <children xmi:id="_O4qR4DFPEeGhDp2bH6SswA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_O4qR4TFPEeGhDp2bH6SswA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_O4qR4jFPEeGhDp2bH6SswA" type="Stereotype"/>
+    <children xmi:id="_O4qR4zFPEeGhDp2bH6SswA" type="Name"/>
+    <children xmi:id="_O4qR5DFPEeGhDp2bH6SswA" type="Parent"/>
+    <children xmi:id="_O4q48DFPEeGhDp2bH6SswA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_O4q48TFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_O4rgADFPEeGhDp2bH6SswA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_O4rgATFPEeGhDp2bH6SswA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_O4pDwTFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CertRequestServiceImpl%5Bjcu%5Ename=CertRequestServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O4pDwjFPEeGhDp2bH6SswA" x="22190" y="12046"/>
+  </children>
+  <children xmi:id="_P8OAoDFPEeGhDp2bH6SswA">
+    <children xmi:id="_P8POwDFPEeGhDp2bH6SswA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_P8POwTFPEeGhDp2bH6SswA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_P8P10DFPEeGhDp2bH6SswA" type="Stereotype"/>
+    <children xmi:id="_P8P10TFPEeGhDp2bH6SswA" type="Kind"/>
+    <children xmi:id="_P8P10jFPEeGhDp2bH6SswA" type="Name"/>
+    <children xmi:id="_P8Qc4DFPEeGhDp2bH6SswA" type="Parent"/>
+    <children xmi:id="_P8Qc4TFPEeGhDp2bH6SswA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_P8Qc4jFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_P8Qc4zFPEeGhDp2bH6SswA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_P8Qc5DFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_P8RD8DFPEeGhDp2bH6SswA" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_P8RD8TFPEeGhDp2bH6SswA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_P8OAoTFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=ICertRequestDAO%5Bjcu%5Ename=ICertRequestDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P8OAojFPEeGhDp2bH6SswA" x="9510" y="21556"/>
+  </children>
+  <children xmi:id="_QZnuUDFPEeGhDp2bH6SswA">
+    <children xmi:id="_QZoVYDFPEeGhDp2bH6SswA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_QZoVYTFPEeGhDp2bH6SswA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_QZoVYjFPEeGhDp2bH6SswA" type="Stereotype"/>
+    <children xmi:id="_QZo8cDFPEeGhDp2bH6SswA" type="Name"/>
+    <children xmi:id="_QZo8cTFPEeGhDp2bH6SswA" type="Parent"/>
+    <children xmi:id="_QZo8cjFPEeGhDp2bH6SswA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_QZo8czFPEeGhDp2bH6SswA"/>
+    </children>
+    <children xmi:id="_QZo8dDFPEeGhDp2bH6SswA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_QZo8dTFPEeGhDp2bH6SswA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_QZnuUTFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CertRequestDAOImpl%5Bjcu%5Ename=CertRequestDAOImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZnuUjFPEeGhDp2bH6SswA" x="17752" y="21556"/>
+  </children>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_Gbt6wjFPEeGhDp2bH6SswA"/>
+  <element xsi:nil="true"/>
+  <edges xmi:id="_MxmewDFPEeGhDp2bH6SswA" source="_H45DYDFPEeGhDp2bH6SswA" target="_MtD9ADFPEeGhDp2bH6SswA">
+    <children xmi:id="_Mxns4DFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_Mxo7ADFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_Mxo7AjFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_Mxo7ATFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Mxns4TFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_MxmewTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=CreateCertRequestAction%5Bjcu%5Ename=CreateCertRequestAction.java%5Bjpack%5Ename=com.vwoa.ecrms.action.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CertRequestModel%5Bjcu%5Ename=CertRequestModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MxmewjFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_OX8xgDFPEeGhDp2bH6SswA" source="_H45DYDFPEeGhDp2bH6SswA" target="_OUbjcDFPEeGhDp2bH6SswA">
+    <children xmi:id="_OX9YkDFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_OX9YkjFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_OX-msTFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_OX-msDFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OX9YkTFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_OX8xgTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=CreateCertRequestAction%5Bjcu%5Ename=CreateCertRequestAction.java%5Bjpack%5Ename=com.vwoa.ecrms.action.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ICertRequestService%5Bjcu%5Ename=ICertRequestService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OX8xgjFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_OX_NwDFPEeGhDp2bH6SswA" source="_OUbjcDFPEeGhDp2bH6SswA" target="_MtD9ADFPEeGhDp2bH6SswA">
+    <children xmi:id="_OYAb4DFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_OYBC8DFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_OYBC8jFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_OYBC8TFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OYAb4TFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_OX_NwTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ICertRequestService%5Bjcu%5Ename=ICertRequestService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CertRequestModel%5Bjcu%5Ename=CertRequestModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OX_NwjFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_O5weEDFPEeGhDp2bH6SswA" source="_O4pDwDFPEeGhDp2bH6SswA" target="_OUbjcDFPEeGhDp2bH6SswA">
+    <children xmi:id="_O5xsMDFPEeGhDp2bH6SswA" type="NameLabel">
+      <children xmi:id="_O5xsMjFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_O5xsMzFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O5xsMTFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_O5weETFPEeGhDp2bH6SswA" fontName="Segoe UI" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=CertRequestServiceImpl%5Bjcu%5Ename=CertRequestServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ICertRequestService%5Bjcu%5Ename=ICertRequestService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_O5weEjFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_O5yTQDFPEeGhDp2bH6SswA" source="_O4pDwDFPEeGhDp2bH6SswA" target="_MtD9ADFPEeGhDp2bH6SswA">
+    <children xmi:id="_O5yTQzFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_O5y6UDFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_O5y6UjFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_O5y6UTFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O5yTRDFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_O5yTQTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=CertRequestServiceImpl%5Bjcu%5Ename=CertRequestServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CertRequestModel%5Bjcu%5Ename=CertRequestModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_O5yTQjFPEeGhDp2bH6SswA" points="[53, 1972, 21531, 1508]$[53, 4026, 21531, 3562]$[-14490, 4026, 6988, 3562]$[-14490, 2121, 6988, 1657]$[-17404, 2121, 4074, 1657]"/>
+  </edges>
+  <edges xmi:id="_P-gfoDFPEeGhDp2bH6SswA" source="_O4pDwDFPEeGhDp2bH6SswA" target="_P8OAoDFPEeGhDp2bH6SswA">
+    <children xmi:id="_P-hGsDFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_P-hGsjFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_P-hGtDFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_P-hGszFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-hGsTFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_P-gfoTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=CertRequestServiceImpl%5Bjcu%5Ename=CertRequestServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ICertRequestDAO%5Bjcu%5Ename=ICertRequestDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P-gfojFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_P-htwDFPEeGhDp2bH6SswA" source="_P8OAoDFPEeGhDp2bH6SswA" target="_MtD9ADFPEeGhDp2bH6SswA">
+    <children xmi:id="_P-iU0DFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_P-iU0jFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_P-iU1DFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_P-iU0zFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-iU0TFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_P-htwTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ICertRequestDAO%5Bjcu%5Ename=ICertRequestDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CertRequestModel%5Bjcu%5Ename=CertRequestModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P-htwjFPEeGhDp2bH6SswA" points="[-1136, -1482, 5426, 7074]$[-1136, -2375, 5426, 6181]$[-7194, -2375, -632, 6181]$[-7194, -3267, -632, 5289]"/>
+  </edges>
+  <edges xmi:id="_QaZxcDFPEeGhDp2bH6SswA" source="_QZnuUDFPEeGhDp2bH6SswA" target="_MtD9ADFPEeGhDp2bH6SswA">
+    <children xmi:id="_QaaYgDFPEeGhDp2bH6SswA" type="KindLabel">
+      <children xmi:id="_QaaYgjFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_QaaYhDFPEeGhDp2bH6SswA" type="Kind"/>
+      <children xmi:id="_QaaYgzFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QaaYgTFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_QaZxcTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=CertRequestDAOImpl%5Bjcu%5Ename=CertRequestDAOImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CertRequestModel%5Bjcu%5Ename=CertRequestModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QaZxcjFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_Qaa_kDFPEeGhDp2bH6SswA" source="_QZnuUDFPEeGhDp2bH6SswA" target="_P8OAoDFPEeGhDp2bH6SswA">
+    <children xmi:id="_QabmoDFPEeGhDp2bH6SswA" type="NameLabel">
+      <children xmi:id="_QabmojFPEeGhDp2bH6SswA" type="Stereotype"/>
+      <children xmi:id="_QacNsDFPEeGhDp2bH6SswA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QabmoTFPEeGhDp2bH6SswA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_Qaa_kTFPEeGhDp2bH6SswA" fontName="Segoe UI" routing="Rectilinear" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=CertRequestDAOImpl%5Bjcu%5Ename=CertRequestDAOImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ICertRequestDAO%5Bjcu%5Ename=ICertRequestDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.certrequest%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Qaa_kjFPEeGhDp2bH6SswA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+</notation:Diagram>

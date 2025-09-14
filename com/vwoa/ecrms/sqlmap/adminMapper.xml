@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vwoa.ecrms.dao.administration.AdminDAOImpl">
+
+
+<!--
+
+This Query retrieves the data for Expired Notification
+
+-->
+
+<select id="retrieveExpNotifDetails" resultType="notifModel">
+
+ SELECT 
+ 
+ NOTIF.NOTF_FROM_EMAIL as expiryFrom,
+ 
+ NOTIF.NOTF_SBJCT as expirySubj,
+ 
+ NOTIF.NOTF_CNTNT as expiryBody
+ 
+ FROM ${db.schema}.NDT_NOTF NOTIF 
+ 
+ WHERE NOTIF.NOTF_TYP = 'EXPR_NOTF'
+
+</select>
+
+<!--
+
+This Query updates the data of Expired Notification into the table
+
+-->
+<update id="updateExpNotifDetails" parameterType="notifModel" >
+
+UPDATE ${db.schema}.NDT_NOTF NOTIF
+
+SET 
+
+NOTIF.NOTF_FROM_EMAIL= #{expiryFrom,jdbcType=VARCHAR}, 
+
+NOTIF.NOTF_SBJCT=#{expirySubj,jdbcType=VARCHAR}, 
+
+NOTIF.NOTF_CNTNT=#{expiryBody,jdbcType=VARCHAR},
+
+NOTIF.UPD_DTTM = SYSDATE,
+
+NOTIF.UPD_BY_USER = #{userId,jdbcType=VARCHAR}
+
+WHERE  NOTIF.NOTF_TYP = 'EXPR_NOTF'
+
+</update>
+<!--
+
+This Query retrieves the data for Received Notification
+
+-->
+<select id="retrieveRecNotifDetails" resultType="notifModel">
+
+ SELECT 
+ 
+ NOTIF.NOTF_FROM_EMAIL as expiryFrom,
+
+ NOTIF.NOTF_SBJCT as expirySubj,
+
+ NOTIF.NOTF_CNTNT as expiryBody 
+ 
+ FROM ${db.schema}.NDT_NOTF NOTIF
+
+ WHERE NOTIF.NOTF_TYP = 'CERT_RCVD_NOTF'
+
+</select>
+<!--
+
+This Query updates the data of Received Notification into the table
+
+-->
+<update id="updateRecNotifDetails" parameterType="notifModel">
+
+UPDATE ${db.schema}.NDT_NOTF NOTIF
+SET 
+
+NOTIF.NOTF_FROM_EMAIL= #{expiryFrom,jdbcType=VARCHAR}, 
+
+NOTIF.NOTF_SBJCT=#{expirySubj,jdbcType=VARCHAR}, 
+
+NOTIF.NOTF_CNTNT=#{expiryBody,jdbcType=VARCHAR},
+
+NOTIF.UPD_DTTM = SYSDATE ,
+
+NOTIF.UPD_BY_USER = #{userId,jdbcType=VARCHAR}
+
+
+WHERE  NOTIF.NOTF_TYP = 'CERT_RCVD_NOTF'
+
+</update>
+<!--
+
+This Query retrieves the Expiry Period
+
+-->
+
+<select id="retrieveExpiryPeriod" resultType="expModel">
+
+SELECT EXPCON.CONFIG_VAL as expiryPeriod
+
+FROM ${db.schema}.ACD_APP_CONFIG EXPCON
+
+WHERE(EXPCON.CONFIG_KEY = 'EXPR_PRD')
+
+</select>
+
+
+<!--
+
+This Query updates Expiry Period into the table
+
+-->
+<update id="saveExpPeriod" parameterType="expModel"> 
+
+UPDATE ${db.schema}.ACD_APP_CONFIG EXPCON
+
+SET EXPCON.CONFIG_VAL = #{expiryPeriod},
+    EXPCON.UPD_DTTM = SYSDATE,
+    EXPCON.UPD_BY_USER = #{userId} 
+
+WHERE(EXPCON.CONFIG_KEY = 'EXPR_PRD')
+
+</update>
+
+<!--  
+
+This Query retrieves the Device Type List from the table
+
+-->
+<select id="retrieveDeviceType" resultType="deviceTypeModel">
+
+SELECT 
+
+DVC.DVCE_CDE as deviceTypeId,
+       
+DVC.DVCE_DESC as deviceTypeDesc,
+
+DVC.DVCE_ACTV_IND as deviceActiveInd
+       
+FROM  ${db.schema}.DTP_DVCE_TYP DVC      
+
+
+<if test="orderByField != null and orderByField == 'DTP_DVCE_TYP.DVCE_CDE'">
+ ORDER BY DVC.DVCE_CDE 
+ </if>			  	
+ <if test="orderByField != null and orderByField == 'DTP_DVCE_TYP.DVCE_DESC'">
+ORDER BY DVC.DVCE_DESC 
+</if>
+
+<if test="orderByVal != null and orderByVal == 'asc' ">
+	  	 ASC
+  	 </if>
+  	 <if test="orderByVal != null and orderByVal == 'desc'">
+	  	 DESC
+  	 </if>
+
+</select>
+<!--  
+
+This Query retrieves the Device Type List from the table
+
+-->
+
+<insert id="saveDeviceType" parameterType="deviceTypeModel">
+
+INSERT INTO ${db.schema}.DTP_DVCE_TYP DVC 
+       (DVC.DVCE_CDE,
+        DVC.DVCE_DESC,
+        DVC.DVCE_ACTV_IND,
+        DVC.ADD_DTTM,
+        DVC.UPD_DTTM,
+        DVC.ADD_BY_USER,
+        DVC.UPD_BY_USER
+        )
+         
+         VALUES
+         
+         (#{deviceTypeId,jdbcType=VARCHAR},
+          #{deviceTypeDesc,jdbcType=VARCHAR},
+          'Y',SYSDATE,SYSDATE,#{userId,jdbcType=VARCHAR},#{userId,jdbcType=VARCHAR})
+         
+
+</insert>
+<!--  
+
+This Query updates the status of Device Type Indicator in the table
+
+-->
+<update id="updateActiveIndicatorFalse" parameterType="deviceTypeModel">
+UPDATE ${db.schema}.DTP_DVCE_TYP DVC 
+SET DVC.DVCE_ACTV_IND = 'N',
+DVC.UPD_DTTM  = SYSDATE, 
+DVC.UPD_BY_USER = #{userId}                 
+WHERE(DVC.DVCE_CDE = #{uncheckedDeviceId})
+
+
+</update>
+<!--  
+
+This Query updates the status of Device Type Indicator in the table
+
+-->
+
+
+<update id="updateActiveIndicatorTrue" parameterType="deviceTypeModel">
+UPDATE ${db.schema}.DTP_DVCE_TYP DVC 
+SET DVC.DVCE_ACTV_IND = 'Y' , 
+DVC.UPD_DTTM  = SYSDATE,
+DVC.UPD_BY_USER = #{userId}  
+WHERE(DVC.DVCE_CDE = #{checkedDeviceId})
+
+
+</update>
+
+
+
+
+
+
+</mapper>

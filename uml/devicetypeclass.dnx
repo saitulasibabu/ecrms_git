@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_5_YHoDKHEeGczcd0B102LA" type="Class" name="devicetypeclass.dnx">
+  <eAnnotations xmi:id="_5_YHojKHEeGczcd0B102LA" source="com.ibm.xtools.common.ui.reduction.editingCapabilities">
+    <details xmi:id="_5_YHozKHEeGczcd0B102LA" key="com.ibm.xtools.viz.java.webservice.capability" value="1"/>
+    <details xmi:id="_5_YHpDKHEeGczcd0B102LA" key="com.ibm.xtools.viz.webservice.capabilty" value="1"/>
+    <details xmi:id="_5_YHpTKHEeGczcd0B102LA" key="com.ibm.xtools.activities.javaVisualizerActivity" value="1"/>
+  </eAnnotations>
+  <children xmi:id="_6DjdADKHEeGczcd0B102LA">
+    <children xmi:id="_6DjdAzKHEeGczcd0B102LA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_6DjdBDKHEeGczcd0B102LA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_6DjdBTKHEeGczcd0B102LA" type="Stereotype"/>
+    <children xmi:id="_6DjdBjKHEeGczcd0B102LA" type="Kind"/>
+    <children xmi:id="_6DjdBzKHEeGczcd0B102LA" type="Name"/>
+    <children xmi:id="_6DjdCDKHEeGczcd0B102LA" type="Parent"/>
+    <children xmi:id="_6DjdCTKHEeGczcd0B102LA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DjdCjKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6Dsm8DKHEeGczcd0B102LA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6Dsm8TKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6Dsm8jKHEeGczcd0B102LA" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6Dsm8zKHEeGczcd0B102LA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_6DjdATKHEeGczcd0B102LA" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=IAdminDAO%5Bjcu%5Ename=IAdminDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6DjdAjKHEeGczcd0B102LA" x="8242" y="20288"/>
+  </children>
+  <children xmi:id="_6Dsm9DKHEeGczcd0B102LA">
+    <children xmi:id="_6Dsm9zKHEeGczcd0B102LA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_6Dsm-DKHEeGczcd0B102LA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_6Dsm-TKHEeGczcd0B102LA" type="Stereotype"/>
+    <children xmi:id="_6Dsm-jKHEeGczcd0B102LA" type="Kind"/>
+    <children xmi:id="_6Dsm-zKHEeGczcd0B102LA" type="Name"/>
+    <children xmi:id="_6Dsm_DKHEeGczcd0B102LA" type="Parent"/>
+    <children xmi:id="_6Dsm_TKHEeGczcd0B102LA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6Dsm_jKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6Dsm_zKHEeGczcd0B102LA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnADKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnATKHEeGczcd0B102LA" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnAjKHEeGczcd0B102LA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_6Dsm9TKHEeGczcd0B102LA" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=IAdminService%5Bjcu%5Ename=IAdminService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Dsm9jKHEeGczcd0B102LA" x="5072" y="7925"/>
+  </children>
+  <children xmi:id="_6DsnAzKHEeGczcd0B102LA">
+    <children xmi:id="_6DsnBjKHEeGczcd0B102LA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_6DsnBzKHEeGczcd0B102LA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_6DsnCDKHEeGczcd0B102LA" type="Stereotype"/>
+    <children xmi:id="_6DsnCTKHEeGczcd0B102LA" type="Name"/>
+    <children xmi:id="_6DsnCjKHEeGczcd0B102LA" type="Parent"/>
+    <children xmi:id="_6DsnCzKHEeGczcd0B102LA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnDDKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnDTKHEeGczcd0B102LA" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnDjKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnDzKHEeGczcd0B102LA" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnEDKHEeGczcd0B102LA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_6DsnBDKHEeGczcd0B102LA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DeviceTypeAdminAction%5Bjcu%5Ename=DeviceTypeAdminAction.java%5Bjpack%5Ename=com.vwoa.ecrms.action.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6DsnBTKHEeGczcd0B102LA" x="7925" y="634"/>
+  </children>
+  <children xmi:id="_6DsnETKHEeGczcd0B102LA">
+    <children xmi:id="_6DsnFDKHEeGczcd0B102LA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_6DsnFTKHEeGczcd0B102LA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_6DsnFjKHEeGczcd0B102LA" type="Stereotype"/>
+    <children xmi:id="_6DsnFzKHEeGczcd0B102LA" type="Name"/>
+    <children xmi:id="_6DsnGDKHEeGczcd0B102LA" type="Parent"/>
+    <children xmi:id="_6DsnGTKHEeGczcd0B102LA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnGjKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnGzKHEeGczcd0B102LA" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnHDKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnHTKHEeGczcd0B102LA" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnHjKHEeGczcd0B102LA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_6DsnEjKHEeGczcd0B102LA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DeviceTypeModel%5Bjcu%5Ename=DeviceTypeModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6DsnEzKHEeGczcd0B102LA" x="14899" y="7925"/>
+  </children>
+  <children xmi:id="_6DsnHzKHEeGczcd0B102LA">
+    <children xmi:id="_6DsnIjKHEeGczcd0B102LA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_6DsnIzKHEeGczcd0B102LA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_6DsnJDKHEeGczcd0B102LA" type="Stereotype"/>
+    <children xmi:id="_6DsnJTKHEeGczcd0B102LA" type="Name"/>
+    <children xmi:id="_6DsnJjKHEeGczcd0B102LA" type="Parent"/>
+    <children xmi:id="_6DsnJzKHEeGczcd0B102LA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnKDKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnKTKHEeGczcd0B102LA" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnKjKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnKzKHEeGczcd0B102LA" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnLDKHEeGczcd0B102LA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_6DsnIDKHEeGczcd0B102LA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=AdminDAOImpl%5Bjcu%5Ename=AdminDAOImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6DsnITKHEeGczcd0B102LA" x="11729" y="13631"/>
+  </children>
+  <children xmi:id="_6DsnLTKHEeGczcd0B102LA">
+    <children xmi:id="_6DsnMDKHEeGczcd0B102LA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_6DsnMTKHEeGczcd0B102LA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_6DsnMjKHEeGczcd0B102LA" type="Stereotype"/>
+    <children xmi:id="_6DsnMzKHEeGczcd0B102LA" type="Name"/>
+    <children xmi:id="_6DsnNDKHEeGczcd0B102LA" type="Parent"/>
+    <children xmi:id="_6DsnNTKHEeGczcd0B102LA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnNjKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnNzKHEeGczcd0B102LA" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnODKHEeGczcd0B102LA"/>
+    </children>
+    <children xmi:id="_6DsnOTKHEeGczcd0B102LA" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_6DsnOjKHEeGczcd0B102LA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_6DsnLjKHEeGczcd0B102LA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=AdminServiceImpl%5Bjcu%5Ename=AdminServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6DsnLzKHEeGczcd0B102LA" x="2219" y="14265"/>
+  </children>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_5_YHoTKHEeGczcd0B102LA"/>
+  <element xsi:nil="true"/>
+  <edges xmi:id="_6GYHgDKHEeGczcd0B102LA" source="_6DjdADKHEeGczcd0B102LA" target="_6DsnETKHEeGczcd0B102LA">
+    <children xmi:id="_6GYHgzKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6GYHhTKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6GYHhzKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6GYHhjKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6GYHhDKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHgTKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=IAdminDAO%5Bjcu%5Ename=IAdminDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeviceTypeModel%5Bjcu%5Ename=DeviceTypeModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHgjKHEeGczcd0B102LA" points="[1330, -2301, -2934, 14690]$[7696, -2301, 3432, 14690]$[7696, -11634, 3432, 5357]$[3011, -11634, -1253, 5357]$[3011, -12711, -1253, 4280]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVejKHEeGczcd0B102LA" id="(0.7499082,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVezKHEeGczcd0B102LA" id="(0.3366235,0.0)"/>
+  </edges>
+  <edges xmi:id="_6GYHiDKHEeGczcd0B102LA" source="_6Dsm9DKHEeGczcd0B102LA" target="_6DsnETKHEeGczcd0B102LA">
+    <children xmi:id="_6GYHizKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6GYHjTKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6GYHjzKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6GYHjjKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6GYHjDKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHiTKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=IAdminService%5Bjcu%5Ename=IAdminService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeviceTypeModel%5Bjcu%5Ename=DeviceTypeModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHijKHEeGczcd0B102LA" points="[1330, -2841, -7648, 1787]$[5495, -2841, -3483, 1787]$[5495, -5938, -3483, -1310]$[8978, -5938, 0, -1310]$[8978, -4628, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVfDKHEeGczcd0B102LA" id="(0.7499082,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVfTKHEeGczcd0B102LA" id="(0.6627596,0.0)"/>
+  </edges>
+  <edges xmi:id="_6GYHkDKHEeGczcd0B102LA" source="_6DsnAzKHEeGczcd0B102LA" target="_6DsnETKHEeGczcd0B102LA">
+    <children xmi:id="_6GYHkzKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6GYHlTKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6GYHlzKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6GYHljKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6GYHlDKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHkTKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DeviceTypeAdminAction%5Bjcu%5Ename=DeviceTypeAdminAction.java%5Bjpack%5Ename=com.vwoa.ecrms.action.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeviceTypeModel%5Bjcu%5Ename=DeviceTypeModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHkjKHEeGczcd0B102LA" points="[0, 0, 1, -27772]$[0, 27772, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVfjKHEeGczcd0B102LA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVfzKHEeGczcd0B102LA" id="(0.8260333,0.0)"/>
+  </edges>
+  <edges xmi:id="_6GYHmDKHEeGczcd0B102LA" source="_6DsnAzKHEeGczcd0B102LA" target="_6Dsm9DKHEeGczcd0B102LA">
+    <children xmi:id="_6GYHmzKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6GYHnTKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6GYHnzKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6GYHnjKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6GYHnDKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHmTKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DeviceTypeAdminAction%5Bjcu%5Ename=DeviceTypeAdminAction.java%5Bjpack%5Ename=com.vwoa.ecrms.action.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=IAdminService%5Bjcu%5Ename=IAdminService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHmjKHEeGczcd0B102LA" points="[0, 0, 2021, -1586]$[-2021, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVdjKHEeGczcd0B102LA" id="(0.24993388,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVdzKHEeGczcd0B102LA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_6GYHoDKHEeGczcd0B102LA" source="_6DsnHzKHEeGczcd0B102LA" target="_6DjdADKHEeGczcd0B102LA">
+    <children xmi:id="_6GYHozKHEeGczcd0B102LA" type="NameLabel">
+      <children xmi:id="_6GYHpTKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6GYHpjKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6GYHpDKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHoTKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=AdminDAOImpl%5Bjcu%5Ename=AdminDAOImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=IAdminDAO%5Bjcu%5Ename=IAdminDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHojKHEeGczcd0B102LA" points="[1, 0, 0, 1586]$[1, -1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVcDKHEeGczcd0B102LA" id="(0.74389595,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVcTKHEeGczcd0B102LA" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:id="_6GYHpzKHEeGczcd0B102LA" source="_6DsnHzKHEeGczcd0B102LA" target="_6DsnETKHEeGczcd0B102LA">
+    <children xmi:id="_6GYHqjKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6GYHrDKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6GYHrjKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6GYHrTKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6GYHqzKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHqDKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AdminDAOImpl%5Bjcu%5Ename=AdminDAOImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeviceTypeModel%5Bjcu%5Ename=DeviceTypeModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHqTKHEeGczcd0B102LA" points="[0, 0, -4137, -1586]$[4137, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVdDKHEeGczcd0B102LA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVdTKHEeGczcd0B102LA" id="(0.16820893,0.0)"/>
+  </edges>
+  <edges xmi:id="_6GYHrzKHEeGczcd0B102LA" source="_6DsnLTKHEeGczcd0B102LA" target="_6DsnETKHEeGczcd0B102LA">
+    <children xmi:id="_6Gh4gDKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6Gh4gjKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6Gh4hDKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6Gh4gzKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Gh4gTKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6GYHsDKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AdminServiceImpl%5Bjcu%5Ename=AdminServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeviceTypeModel%5Bjcu%5Ename=DeviceTypeModel.java%5Bjpack%5Ename=com.vwoa.ecrms.model.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6GYHsTKHEeGczcd0B102LA" points="[1728, -2747, -7639, 8823]$[3481, -2747, -5886, 8823]$[3481, -11492, -5886, 78]$[7003, -11492, -2364, 78]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVgDKHEeGczcd0B102LA" id="(0.76671976,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVgTKHEeGczcd0B102LA" id="(0.49969155,0.0)"/>
+  </edges>
+  <edges xmi:id="_6Gh4hTKHEeGczcd0B102LA" source="_6DsnLTKHEeGczcd0B102LA" target="_6DjdADKHEeGczcd0B102LA">
+    <children xmi:id="_6Gh4iDKHEeGczcd0B102LA" type="KindLabel">
+      <children xmi:id="_6Gh4ijKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6Gh4jDKHEeGczcd0B102LA" type="Kind"/>
+      <children xmi:id="_6Gh4izKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Gh4iTKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6Gh4hjKHEeGczcd0B102LA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AdminServiceImpl%5Bjcu%5Ename=AdminServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=IAdminDAO%5Bjcu%5Ename=IAdminDAO.java%5Bjpack%5Ename=com.vwoa.ecrms.dao.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6Gh4hzKHEeGczcd0B102LA" points="[0, 0, 0, -1586]$[0, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVeDKHEeGczcd0B102LA" id="(0.5334395,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVeTKHEeGczcd0B102LA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_6Gh4jTKHEeGczcd0B102LA" source="_6DsnLTKHEeGczcd0B102LA" target="_6Dsm9DKHEeGczcd0B102LA">
+    <children xmi:id="_6Gh4kDKHEeGczcd0B102LA" type="NameLabel">
+      <children xmi:id="_6Gh4kjKHEeGczcd0B102LA" type="Stereotype"/>
+      <children xmi:id="_6Gh4kzKHEeGczcd0B102LA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Gh4kTKHEeGczcd0B102LA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_6Gh4jjKHEeGczcd0B102LA" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=AdminServiceImpl%5Bjcu%5Ename=AdminServiceImpl.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=IAdminService%5Bjcu%5Ename=IAdminService.java%5Bjpack%5Ename=com.vwoa.ecrms.service.administration%5Bjsrcroot%5Esrcfolder=src/java%5Bproject%5Eid=ecrms%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6Gh4jzKHEeGczcd0B102LA" points="[1, 0, 0, 1586]$[1, -1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVcjKHEeGczcd0B102LA" id="(0.74389595,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HIVczKHEeGczcd0B102LA" id="(0.5,1.0)"/>
+  </edges>
+</notation:Diagram>

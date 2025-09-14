@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.vwoa.ecrms.dao.searchcertificaterequest.SearchCertRequestDAOImpl">
+	<!--
+
+		This Query retrieves the data for Dealer details required to display
+		dealer name and dealer number on basic search page (replace(RTL.CO_NME,’/’,’-’))
+		
+		Old Query : 
+		SELECT RTL.RETLR_ID
+		as dealerNum, replace(RTL.CO_NME,'/','-') as
+		dealerName 
+		FROM
+		CP_DBA.RTL_RETLR_ALL RTL WHERE
+		trim(RTL.RETLR_ID)=trim(#{dealerNumber})
+		
+		Added Status Check Condition
+		Added Upper for Dealer Number 
+	-->
+	<select id="retrieveDealerDetailData" resultType="searchCertRequestModel"
+		parameterType="java.lang.String">
+
+		
+		SELECT RTL.RETLR_ID 
+		as dealerNum, replace(RTL.CO_NME,'/','-') as 
+		dealerName 
+		FROM 
+		CP_DBA.RTL_RETLR_ALL RTL WHERE 
+		trim(RTL.RETLR_ID)=upper(trim(#{dealerNumber})) and RTL.RETLR_ST_CDE!='I'
+	
+	</select>
+
+	<!-- 
+Select query for Advanced search
+ -->
+	<select id="retrieveSearchCertResult" resultType="searchResultCertRequestModel"
+	parameterType="searchCertRequestModel" resultSetType="SCROLL_SENSITIVE">
+
+	SELECT
+	CRT.RQST_NUM AS requestNum,
+	CDT.CERT_SERL_NUM AS certSerialNum,
+	CRT.DLR_CDE AS dealerNum,
+	CRT.DVCE_CDE AS deviceType,
+	CRT.VAS_EQMNT_ID AS hardwareId,
+	CRT.VAS_EQMNT_NAME AS deviceNickName,
+	RST.RQST_STAT_DESC AS status,
+	to_char(CDT.CERT_ISSUE_DTE,'yyyy/MM/DD HH24:MI:SS') AS issueDate,
+	to_char(CDT.CERT_EXPR_DTE,'yyyy/MM/DD HH24:MI:SS') AS expiryDate,
+	to_char(CDT.CERT_REVK_DTE,'yyyy/MM/DD HH24:MI:SS') AS revokedDate
+
+	FROM
+	${db.schema}.CRT_CERT_RQST CRT LEFT JOIN ${db.schema}.CDT_CERT CDT
+	ON CRT.CERT_NUM = CDT.CERT_NUM ,
+	${db.schema}.RST_RQST_STATUS RST
+
+	WHERE
+	CRT.RQST_STAT_CDE = RST.RQST_STAT_CDE
+		<if test="dealerNum !=null and dealerNum !=''">
+			AND trim(CRT.DLR_CDE) LIKE trim(#{dealerNum})
+  	</if>
+		<if test="status !=null and status !=''">
+			AND trim(CRT.RQST_STAT_CDE) = trim(#{status})
+  	</if>
+		<if test="requestNumStr !=null and requestNumStr !=''">
+			AND trim(CRT.RQST_NUM) LIKE trim(#{requestNumStr})
+  	</if>
+		<if test="deviceType !=null and deviceType !=''">
+			AND trim(CRT.DVCE_CDE) = trim(#{deviceType})
+  	</if>
+		<if test="hardwareId !=null and hardwareId !=''">
+			AND trim(CRT.VAS_EQMNT_ID) LIKE trim(#{hardwareId})
+  	</if>
+		<if test="fromIssueDate != null and fromIssueDate != ''">
+			<if test="toIssueDate != null and toIssueDate != ''">
+				AND CDT.CERT_ISSUE_DTE BETWEEN to_date(#{fromIssueDate},'mm/dd/yyyy
+				HH24:MI:SS') AND to_date(#{toIssueDate},'mm/dd/yyyy HH24:MI:SS')
+		</if>
+		</if>
+		<if test="fromExpiryDate != null and fromExpiryDate != ''">
+			<if test="toExpiryDate != null and toExpiryDate != ''">
+				AND CDT.CERT_EXPR_DTE BETWEEN to_date(#{fromExpiryDate},'mm/dd/yyyy
+				HH24:MI:SS') AND to_date(#{toExpiryDate},'mm/dd/yyyy HH24:MI:SS')
+		</if>
+		</if>
+		<if test="fromRevokedDate != null and fromRevokedDate != ''">
+			<if test="toRevokedDate != null and toRevokedDate != ''">
+				AND CDT.CERT_REVK_DTE BETWEEN to_date(#{fromRevokedDate},'mm/dd/yyyy
+				HH24:MI:SS') AND to_date(#{toRevokedDate},'mm/dd/yyyy HH24:MI:SS')
+		</if>
+		</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.RQST_NUM'">
+			ORDER BY CRT.RQST_NUM 
+  	</if>
+		<if test="orderByField != null and orderByField == 'CRT_CERT_RQST.DLR_CDE'">
+			ORDER BY CRT.DLR_CDE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_NAME'">
+			ORDER BY CRT.VAS_EQMNT_NAME 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'RST_RQST_STATUS.RQST_STAT_DESC'">
+			ORDER BY RST.RQST_STAT_DESC 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_ID'">
+			ORDER BY CRT.VAS_EQMNT_ID 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_ISSUE_DTE'">
+			ORDER BY CDT.CERT_ISSUE_DTE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_EXPR_DTE'">
+			ORDER BY CDT.CERT_EXPR_DTE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_REVK_DTE'">
+			ORDER BY CDT.CERT_REVK_DTE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.DVCE_CDE'">
+			ORDER BY CRT.DVCE_CDE 
+  	</if>
+
+		<if test="orderByVal != null and orderByVal == 'asc' ">
+			ASC
+  	 </if>
+		<if test="orderByVal != null and orderByVal == 'desc'">
+			DESC
+  	 </if>
+
+
+	</select>
+
+	<!-- 
+Select query to get total count for Advanced search
+ -->
+	<select id="retrieveCountSearchCertResult" resultType="java.lang.Integer"
+		parameterType="searchCertRequestModel">
+
+		SELECT
+		COUNT(DISTINCT RQST_NUM)
+
+		FROM
+		${db.schema}.CRT_CERT_RQST CRT LEFT JOIN ${db.schema}.CDT_CERT CDT
+		ON CRT.CERT_NUM = CDT.CERT_NUM ,
+		${db.schema}.RST_RQST_STATUS RST
+
+		WHERE
+		CRT.RQST_STAT_CDE = RST.RQST_STAT_CDE
+		<if test="dealerNum !=null and dealerNum !=''">
+			AND trim(CRT.DLR_CDE) LIKE trim(#{dealerNum})
+  	</if>
+		<if test="status !=null and status !=''">
+			AND trim(CRT.RQST_STAT_CDE) = trim(#{status})
+  	</if>
+		<if test="requestNumStr !=null and requestNumStr !=''">
+			AND trim(CRT.RQST_NUM) LIKE trim(#{requestNumStr})
+  	</if>
+		<if test="deviceType !=null and deviceType !=''">
+			AND trim(CRT.DVCE_CDE) = trim(#{deviceType})
+  	</if>
+		<if test="hardwareId !=null and hardwareId !=''">
+			AND trim(CRT.VAS_EQMNT_ID) LIKE trim(#{hardwareId})
+  	</if>
+		<if test="fromIssueDate != null and fromIssueDate != ''">
+			<if test="toIssueDate != null and toIssueDate != ''">
+				AND CDT.CERT_ISSUE_DTE BETWEEN to_date(#{fromIssueDate},'mm/dd/yyyy
+				HH24:MI:SS') AND to_date(#{toIssueDate},'mm/dd/yyyy HH24:MI:SS')
+		</if>
+		</if>
+		<if test="fromExpiryDate != null and fromExpiryDate != ''">
+			<if test="toExpiryDate != null and toExpiryDate != ''">
+				AND CDT.CERT_EXPR_DTE BETWEEN to_date(#{fromExpiryDate},'mm/dd/yyyy
+				HH24:MI:SS') AND to_date(#{toExpiryDate},'mm/dd/yyyy HH24:MI:SS')
+		</if>
+		</if>
+		<if test="fromRevokedDate != null and fromRevokedDate != ''">
+			<if test="toRevokedDate != null and toRevokedDate != ''">
+				AND CDT.CERT_REVK_DTE BETWEEN to_date(#{fromRevokedDate},'mm/dd/yyyy
+				HH24:MI:SS') AND to_date(#{toRevokedDate},'mm/dd/yyyy HH24:MI:SS')
+		</if>
+		</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.RQST_NUM'">
+			ORDER BY CRT.RQST_NUM 
+  	</if>
+		<if test="orderByField != null and orderByField == 'CRT_CERT_RQST.DLR_CDE'">
+			ORDER BY CRT.DLR_CDE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_NAME'">
+			ORDER BY CRT.VAS_EQMNT_NAME 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'RST_RQST_STATUS.RQST_STAT_DESC'">
+			ORDER BY RST.RQST_STAT_DESC 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_ID'">
+			ORDER BY CRT.VAS_EQMNT_ID 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_ISSUE_DTE'">
+			ORDER BY CDT.CERT_ISSUE_DTE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_EXPR_DTE'">
+			ORDER BY CDT.CERT_EXPR_DTE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_REVK_DTE'">
+			ORDER BY CDT.CERT_REVK_DTE 
+  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.DVCE_CDE'">
+			ORDER BY CRT.DVCE_CDE 
+  	</if>
+
+		<if test="orderByVal != null and orderByVal == 'asc' ">
+			ASC
+  	 </if>
+		<if test="orderByVal != null and orderByVal == 'desc'">
+			DESC
+  	 </if>
+
+
+	</select>
+	<!--
+
+		This query is for NON adminUser to retrieve
+		Basic search result
+	-->
+	<select id="retrieveBasicSearchCertResult" resultType="searchResultCertRequestModel"
+		parameterType="searchCertRequestModel">
+		SELECT requestNum as requestNum,
+		deviceNickName AS deviceNickName,
+		hardwareId AS hardwareId,
+		status AS status,
+		expiryDate AS expiryDate,
+		deviceType AS deviceType,
+		dealerNum AS dealerNum,
+		fileName AS fileName,
+		certActivationDate AS certActivationDate,
+		statuscde AS statuscde,
+		historyStatus AS historyStatus,
+		addDate AS addDate
+		FROM(
+		SELECT
+		CRT.RQST_NUM as requestNum,
+		CRT.VAS_EQMNT_NAME AS deviceNickName,
+		CRT.VAS_EQMNT_ID AS hardwareId,
+		RST.RQST_STAT_DESC AS status,
+		to_char(CDT.CERT_EXPR_DTE,'yyyy/MM/DD HH24:MI:SS') AS expiryDate,
+		CRT.DVCE_CDE AS deviceType,
+		CRT.DLR_CDE AS dealerNum,
+		CDT.CERT_FILE_NME AS fileName,
+		to_char(CDT.CERT_ACTVN_DTTM,'yyyy/MM/DD HH24:MI:SS') AS certActivationDate,
+		CRT.RQST_STAT_CDE AS statuscde,
+		to_char(RSH.ADD_DTTM,'yyyy/MM/DD HH24:MI:SS') AS addDate,
+		RSH.RQST_STAT_CDE AS historyStatus,
+		to_char(RSH.UPD_DTTM,'yyyy/MM/DD HH24:MI:SS') AS updateDate,
+		ROW_NUMBER() OVER (PARTITION BY RSH.RQST_NUM ORDER BY RSH.UPD_DTTM DESC) AS RN
+		FROM ${db.schema}.CRT_CERT_RQST CRT
+		LEFT JOIN ${db.schema}.CDT_CERT CDT ON CRT.CERT_NUM = CDT.CERT_NUM
+		LEFT JOIN ${db.schema}.RST_RQST_STATUS RST ON CRT.RQST_STAT_CDE =
+		RST.RQST_STAT_CDE,
+		${db.schema}.RSH_RQST_STATUS_HIST RSH
+		WHERE CRT.RQST_STAT_CDE != 'REVKD'
+		AND CRT.RQST_STAT_CDE != 'CLOSE'
+		AND RSH.RQST_NUM = CRT.RQST_NUM
+		<if test="dealerNum !=null and dealerNum !=''">
+			AND trim(CRT.DLR_CDE) = trim(#{dealerNum})
+		  	</if>
+		<if test="status !=null and status !=''">
+			AND trim(CRT.RQST_STAT_CDE) = trim(#{status})
+		  	</if>
+
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_NAME'">
+			ORDER BY CRT.VAS_EQMNT_NAME 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'RST_RQST_STATUS.RQST_STAT_DESC'">
+			ORDER BY RST.RQST_STAT_DESC 
+  			</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_ID'">
+			ORDER BY CRT.VAS_EQMNT_ID 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_EXPR_DTE'">
+			ORDER BY CDT.CERT_EXPR_DTE 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.DVCE_CDE'">
+			ORDER BY CRT.DVCE_CDE
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.RQST_NUM'">
+			ORDER BY CRT.RQST_NUM 
+  			</if>
+		<if test="orderByVal != null and orderByVal == 'asc' ">
+			ASC
+		  	 </if>
+		<if test="orderByVal != null and orderByVal == 'desc'">
+			DESC
+		  	 </if>
+		)
+		WHERE RN = 1
+
+
+	</select>
+
+	<!--
+
+		This query is for admin User to retrieve Basic search result
+	-->
+	<select id="retrieveBasicSearchCertResultAdmin" resultType="searchResultCertRequestModel"
+		parameterType="searchCertRequestModel">
+		SELECT requestNum as requestNum,
+		deviceNickName AS deviceNickName,
+		hardwareId AS hardwareId,
+		status AS status,
+		expiryDate AS expiryDate,
+		deviceType AS deviceType,
+		dealerNum AS dealerNum,
+		fileName AS fileName,
+		certActivationDate AS certActivationDate,
+		statuscde AS statuscde,
+		historyStatus AS historyStatus,
+		addDate AS addDate
+		FROM(
+		SELECT
+		CRT.RQST_NUM as requestNum,
+		CRT.VAS_EQMNT_NAME AS deviceNickName,
+		CRT.VAS_EQMNT_ID AS hardwareId,
+		RST.RQST_STAT_DESC AS status,
+		to_char(CDT.CERT_EXPR_DTE,'yyyy/MM/DD HH24:MI:SS') AS expiryDate,
+		CRT.DVCE_CDE AS deviceType,
+		CRT.DLR_CDE AS dealerNum,
+		CDT.CERT_FILE_NME AS fileName,
+		to_char(CDT.CERT_ACTVN_DTTM,'yyyy/MM/DD HH24:MI:SS') AS certActivationDate,
+		CRT.RQST_STAT_CDE AS statuscde,
+		to_char(RSH.ADD_DTTM,'yyyy/MM/DD HH24:MI:SS') AS addDate,
+		RSH.RQST_STAT_CDE AS historyStatus,
+		to_char(RSH.UPD_DTTM,'yyyy/MM/DD HH24:MI:SS') AS updateDate,
+		ROW_NUMBER() OVER (PARTITION BY RSH.RQST_NUM ORDER BY RSH.UPD_DTTM DESC) AS RN
+		FROM ${db.schema}.CRT_CERT_RQST CRT
+		LEFT JOIN ${db.schema}.CDT_CERT CDT ON CRT.CERT_NUM = CDT.CERT_NUM
+		LEFT JOIN ${db.schema}.RST_RQST_STATUS RST ON CRT.RQST_STAT_CDE =
+		RST.RQST_STAT_CDE,
+		${db.schema}.RSH_RQST_STATUS_HIST RSH
+		WHERE CRT.RQST_STAT_CDE != 'CLOSE'
+		AND RSH.RQST_NUM = CRT.RQST_NUM
+		<if test="dealerNum !=null and dealerNum !=''">
+			AND trim(CRT.DLR_CDE) = trim(#{dealerNum})
+		  	</if>
+		<if test="status !=null and status !=''">
+			AND trim(CRT.RQST_STAT_CDE) = trim(#{status})
+		  	</if>
+
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_NAME'">
+			ORDER BY CRT.VAS_EQMNT_NAME 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'RST_RQST_STATUS.RQST_STAT_DESC'">
+			ORDER BY RST.RQST_STAT_DESC 
+  			</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_ID'">
+			ORDER BY CRT.VAS_EQMNT_ID 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_EXPR_DTE'">
+			ORDER BY CDT.CERT_EXPR_DTE 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.DVCE_CDE'">
+			ORDER BY CRT.DVCE_CDE 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.RQST_NUM'">
+			ORDER BY CRT.RQST_NUM 
+  			</if>
+		<if test="orderByVal != null and orderByVal == 'asc' ">
+			ASC
+		  	 </if>
+		<if test="orderByVal != null and orderByVal == 'desc'">
+			DESC
+		  	 </if>
+		)
+		WHERE RN = 1
+
+
+	</select>
+<!--
+
+		This query is for NON adminUser to retrieve
+		count of Basic search result
+	-->
+	<select id="retrieveCountBasicSearchResult" resultType="searchResultCertRequestModel"
+		parameterType="searchCertRequestModel">
+		SELECT COUNT(DISTINCT requestNum)
+		FROM(
+		SELECT
+		CRT.RQST_NUM as requestNum,
+		CRT.VAS_EQMNT_NAME AS deviceNickName,
+		CRT.VAS_EQMNT_ID AS hardwareId,
+		RST.RQST_STAT_DESC AS status,
+		CDT.CERT_EXPR_DTE AS expiryDate,
+		CRT.DVCE_CDE AS deviceType,
+		CRT.DLR_CDE AS dealerNum,
+		CDT.CERT_FILE_NME AS fileName,
+		CDT.CERT_ACTVN_DTTM AS certActivationDate,
+		CRT.RQST_STAT_CDE AS statuscde,
+		RSH.ADD_DTTM AS addDate,
+		RSH.RQST_STAT_CDE AS historyStatus,
+		RSH.UPD_DTTM AS updateDate,
+		ROW_NUMBER() OVER (PARTITION BY RSH.RQST_NUM ORDER BY RSH.UPD_DTTM DESC) AS RN
+		FROM ${db.schema}.CRT_CERT_RQST CRT
+		LEFT JOIN ${db.schema}.CDT_CERT CDT ON CRT.CERT_NUM = CDT.CERT_NUM
+		LEFT JOIN ${db.schema}.RST_RQST_STATUS RST ON CRT.RQST_STAT_CDE =
+		RST.RQST_STAT_CDE,
+		${db.schema}.RSH_RQST_STATUS_HIST RSH
+		WHERE CRT.RQST_STAT_CDE != 'REVKD'
+		AND CRT.RQST_STAT_CDE != 'CLOSE'
+		AND RSH.RQST_NUM = CRT.RQST_NUM
+		<if test="dealerNum !=null and dealerNum !=''">
+			AND trim(CRT.DLR_CDE) = trim(#{dealerNum})
+		  	</if>
+		<if test="status !=null and status !=''">
+			AND trim(CRT.RQST_STAT_CDE) = trim(#{status})
+		  	</if>
+
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_NAME'">
+			ORDER BY CRT.VAS_EQMNT_NAME 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'RST_RQST_STATUS.RQST_STAT_DESC'">
+			ORDER BY RST.RQST_STAT_DESC 
+  			</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_ID'">
+			ORDER BY CRT.VAS_EQMNT_ID 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_EXPR_DTE'">
+			ORDER BY CDT.CERT_EXPR_DTE 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.DVCE_CDE'">
+			ORDER BY CRT.DVCE_CDE
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.RQST_NUM'">
+			ORDER BY CRT.RQST_NUM 
+  			</if>
+		<if test="orderByVal != null and orderByVal == 'asc' ">
+			ASC
+		  	 </if>
+		<if test="orderByVal != null and orderByVal == 'desc'">
+			DESC
+		  	 </if>
+		)
+		WHERE RN = 1
+
+
+	</select>
+
+	<!--
+
+		This query is for admin User to count of retrieve Basic search result
+	-->
+	<select id="retrieveCountBasicSearchResultAdmin" resultType="searchResultCertRequestModel"
+		parameterType="searchCertRequestModel">
+		SELECT COUNT(DISTINCT requestNum)
+		FROM(
+		SELECT
+		CRT.RQST_NUM as requestNum,
+		CRT.VAS_EQMNT_NAME AS deviceNickName,
+		CRT.VAS_EQMNT_ID AS hardwareId,
+		RST.RQST_STAT_DESC AS status,
+		CDT.CERT_EXPR_DTE AS expiryDate,
+		CRT.DVCE_CDE AS deviceType,
+		CRT.DLR_CDE AS dealerNum,
+		CDT.CERT_FILE_NME AS fileName,
+		CDT.CERT_ACTVN_DTTM AS certActivationDate,
+		CRT.RQST_STAT_CDE AS statuscde,
+		RSH.ADD_DTTM AS addDate,
+		RSH.RQST_STAT_CDE AS historyStatus,
+		RSH.UPD_DTTM AS updateDate,
+		ROW_NUMBER() OVER (PARTITION BY RSH.RQST_NUM ORDER BY RSH.UPD_DTTM DESC) AS RN
+		FROM ${db.schema}.CRT_CERT_RQST CRT
+		LEFT JOIN ${db.schema}.CDT_CERT CDT ON CRT.CERT_NUM = CDT.CERT_NUM
+		LEFT JOIN ${db.schema}.RST_RQST_STATUS RST ON CRT.RQST_STAT_CDE =
+		RST.RQST_STAT_CDE,
+		${db.schema}.RSH_RQST_STATUS_HIST RSH
+		WHERE CRT.RQST_STAT_CDE != 'CLOSE'
+		AND RSH.RQST_NUM = CRT.RQST_NUM
+		<if test="dealerNum !=null and dealerNum !=''">
+			AND trim(CRT.DLR_CDE) = trim(#{dealerNum})
+		  	</if>
+		<if test="status !=null and status !=''">
+			AND trim(CRT.RQST_STAT_CDE) = trim(#{status})
+		  	</if>
+
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_NAME'">
+			ORDER BY CRT.VAS_EQMNT_NAME 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'RST_RQST_STATUS.RQST_STAT_DESC'">
+			ORDER BY RST.RQST_STAT_DESC 
+  			</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.VAS_EQMNT_ID'">
+			ORDER BY CRT.VAS_EQMNT_ID 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CDT_CERT.CERT_EXPR_DTE'">
+			ORDER BY CDT.CERT_EXPR_DTE 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.DVCE_CDE'">
+			ORDER BY CRT.DVCE_CDE 
+		  	</if>
+		<if
+			test="orderByField != null and orderByField == 'CRT_CERT_RQST.RQST_NUM'">
+			ORDER BY CRT.RQST_NUM 
+  			</if>
+		<if test="orderByVal != null and orderByVal == 'asc' ">
+			ASC
+		  	 </if>
+		<if test="orderByVal != null and orderByVal == 'desc'">
+			DESC
+		  	 </if>
+		)
+		WHERE RN = 1
+
+
+	</select>
+	
+	<update id="updateCertActivationDte" parameterType="searchCertRequestModel">
+		UPDATE
+		${db.schema}.CDT_CERT SET CERT_ACTVN_DTTM=SYSDATE, UPD_BY_USER=#{userId},UPD_DTTM=SYSDATE
+		WHERE CERT_NUM IN (SELECT CDT.CERT_NUM FROM ${db.schema}.CDT_CERT CDT,
+		${db.schema}.CRT_CERT_RQST CRT WHERE CRT.RQST_NUM IN
+		<foreach item="requestNum" index="index" collection="reqNumList"
+			open="(" separator="," close=")">
+			#{requestNum}
+    </foreach>
+
+		AND CRT.CERT_NUM=CDT.CERT_NUM)
+
+	</update>
+
+
+</mapper>
+	

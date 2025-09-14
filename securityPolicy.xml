@@ -1,0 +1,7 @@
+<xwss:SecurityConfiguration dumpMessages="false" xmlns:xwss="http://java.sun.com/xml/ns/xwss/config">
+
+    <xwss:UsernameToken digestPassword="false" useNonce="false"/><!--
+
+    <xwss:RequireUsernameToken nonceRequired="true" passwordDigestRequired="false"/>      
+
+--></xwss:SecurityConfiguration>

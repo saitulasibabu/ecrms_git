@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vwoa.ecrms.dao.common.CommonDAOImpl">
+<!--  
+
+This Query retrieves  the specific Device Type details from the table
+
+-->
+<select id="retrieveDeviceData" resultType="dropdown">
+
+ SELECT DVCE_CDE AS key, DVCE_CDE AS value FROM ${db.schema}.DTP_DVCE_TYP WHERE DVCE_ACTV_IND='Y' ORDER BY DVCE_CDE ASC
+
+</select>
+
+<!--  
+
+This Query retrieves  all the Device Type details from the table
+
+-->
+<select id="retrieveAllDeviceData" resultType="dropdown">
+
+SELECT DVCE_CDE AS key, DVCE_CDE AS value FROM ${db.schema}.DTP_DVCE_TYP ORDER BY DVCE_CDE ASC
+
+</select>
+<!--  
+
+This Query retrieves  the status details from the table
+
+-->	
+<select id="retrieveStatusData" resultType="dropdown">
+
+ SELECT RQST_STAT_CDE AS key, RQST_STAT_DESC AS value FROM ${db.schema}.RST_RQST_STATUS ORDER BY RQST_STAT_CDE ASC
+
+</select>
+	
+</mapper>

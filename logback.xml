@@ -1,0 +1,56 @@
+<!--  unfortunately, Logback does not support schema or DTD. But in case of configuration failure, error messages would be shown.-->
+<configuration debug="false">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %thread %5level %36logger{40}:%-3line - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/data/apps/ecrms/was9/logs/ecrms.log</file>
+		<encoder>
+<!--			<pattern>%date %-5level %-35logger{10}:%-3line %msg%n</pattern>-->
+			<pattern>%date %thread %5level %35C{35}:%-3line %msg%n</pattern>
+		</encoder>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>/data/apps/ecrms/was9/logs/ecrms.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<!-- keep 1 days worth of history -->
+			<maxHistory>1</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 15MB -->
+				<maxFileSize>15MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<logger name="org.springframework.jdbc" level="DEBUG"/>
+	<logger name="org.springframework.batch" level="INFO"/>
+	<logger name="org.springframework.transaction" level="INFO"/>
+	<logger name="org.springframework.security" level="WARN"/>
+	<logger name="java.sql" level="DEBUG"/>
+	<logger name="org.mybatis" level="DEBUG"/>
+
+	<logger name="org.apache.struts2" level="INFO"/>
+	<logger name="com.opensymphony.xwork2" level="INFO"/>
+	<logger name="org.apache.struts2.convention" level="TRACE"/>
+	<logger name="org.apache.struts2.json" level="DEBUG"/>
+	<logger name="com.opensymphony.xwork2.interceptor.TimerInterceptor" level="INFO"/>
+	<logger name="com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor" level="DEBUG"/>
+	<logger name="org.springframework.ws.client.MessageTracing.sent" level="TRACE"/>
+	<logger name="org.springframework.ws.client.MessageTracing.received" level="TRACE"/>
+	
+	<logger name="com.vwoa" level="DEBUG"/>
+	<logger name="com.vwoa.ecrms" level="DEBUG"/>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+	</root>
+			
+</configuration>

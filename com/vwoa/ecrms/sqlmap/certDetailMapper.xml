@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vwoa.ecrms.dao.certrequest.EditStatusCertRequestDAOImpl">
+
+<!--  
+
+This Query inserts the Certificate details into the db 
+
+-->
+
+	<insert id="insertCertDetail" parameterType="certDetailModel">
+		<selectKey keyProperty="certNum" resultType="int" order="BEFORE">
+			SELECT ${db.schema}.CERT_NUM_GEN.NEXTVAL FROM DUAL
+  		</selectKey>
+		INSERT INTO ${db.schema}.CDT_CERT (
+		CERT_NUM, CERT_SERL_NUM, CERT_ISSUE_DTE, CERT_ACTVN_DTTM,
+		CERT_FILE_NME, CERT_EXPR_DTE, ADD_BY_USER, UPD_BY_USER, CERT_TYP_CDE)
+		VALUES ( #{certNum}, #{certSerialNum}, #{certIssueDate},#{certIssueDate}, #{certFilePath},
+		#{certExpiryDate}, #{userId}, #{userId}, 'MSSP' )
+
+	</insert>
+	
+	
+<!--  
+
+This Query updates the status of Certificate Request in the table
+
+-->
+	<update id="updateCertReqStatus" parameterType="certRequestModel">
+		UPDATE
+		${db.schema}.CRT_CERT_RQST SET
+		RQST_STAT_CDE=#{statusCode},
+		UPD_BY_USER=#{userId},
+		UPD_DTTM=SYSDATE
+		WHERE
+		RQST_NUM=#{requestNum}
+	  </update>
+<!--  
+
+This Query retrieves  the Email notification details from the table
+
+-->
+
+	<select id="retriveEmailDetails" resultType="emailNotfModel">
+	SELECT NDT.NOTF_FROM_EMAIL AS securityAdminEmail, NDT.NOTF_SBJCT AS subject,
+	NDT.NOTF_CNTNT AS body
+	FROM ${db.schema}.NDT_NOTF NDT
+	WHERE NDT.NOTF_TYP = 'CERT_RCVD_NOTF'
+	</select>
+<!--  
+
+This Query retrieves  the Expiry Period value from the table
+
+-->
+	<select id="retriveExpiryPeriod" resultType="java.lang.String">
+		SELECT CONFIG_VAL FROM ${db.schema}.ACD_APP_CONFIG WHERE
+		CONFIG_KEY='EXPR_PRD'
+	</select>
+<!--  
+
+This Query retrieves  the Certificate File name from the table
+
+-->
+	<select id="retriveCertFileName" resultType="java.lang.String"
+		parameterType="java.lang.Integer">
+		SELECT
+		CDT.CERT_FILE_NME
+		FROM ${db.schema}.CDT_CERT CDT, ${db.schema}.CRT_CERT_RQST CRT WHERE CDT.CERT_NUM = CRT.CERT_NUM AND
+		CRT.RQST_NUM=#{requestNum}
+	</select>
+<!--  
+
+This Query updates the Revoke Date of the Certificate request in the table
+
+-->	
+	<update id="updateRevokeDate" parameterType="certRequestModel">
+		UPDATE 
+		${db.schema}.CDT_CERT CDT SET 
+		CDT.CERT_REVK_DTE = SYSDATE 
+		WHERE 
+		CDT.CERT_NUM = ( 
+		SELECT CRT.CERT_NUM 
+		FROM ${db.schema}.CRT_CERT_RQST CRT WHERE 
+		CRT.RQST_NUM = #{requestNum})
+		
+	  </update>
+
+<!-- Query to fetch activation date for active certificates -->
+	<select id="retriveCertActvnDate" resultType="java.lang.String"
+		parameterType="java.lang.Integer">
+		SELECT CDT.CERT_ACTVN_DTTM FROM ${db.schema}.CDT_CERT CDT,
+		${db.schema}.CRT_CERT_RQST CRT WHERE CRT.CERT_NUM=CDT.CERT_NUM AND
+		CRT.RQST_NUM=#{requestNum}
+	  </select>
+</mapper>
+
+
+
+
+

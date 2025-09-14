@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vwoa.ecrms.dao.certrequest.CertRequestDAOImpl">
+
+<!--  
+
+This Query retrieves  the Dealer details from the table and replace / with - to avoid Web Service call conflict 
+using replace(RTL.CO_NME,’/’,’-’)
+
+		SELECT RTL.RETLR_ID
+		as dealerNum, RTL.CO_NME as
+		dealerName ,
+		RTL.DUAL_RETLR_ID as
+		dualDealerNum , RTL.RTRN_CNTC_NME as
+		contactName,
+		ADR.STRE_LINE_1_TXT
+		||' '|| ADR.STRE_LINE_2_TXT as
+		dealerStreetLine,
+		ADR.CITY_NME as
+		dealerCity, ADR.PROV_ST_CDE as
+		dealerState,
+		ADR.POST_ZIP_CDE as
+		dealerZip, ADR.CNTY_CDE as dealerCntry
+		FROM
+		CP_DBA.RTL_RETLR_ALL RTL LEFT JOIN CP_DBA.ADR_ADDR_RTL ADR ON RTL.ADDR_ID = ADR.ADDR_ID
+		WHERE
+		trim(RTL.RETLR_ID)=upper(trim(#{dealerNumber}))
+		
+		Added upper to Dealer Number
+		Added condition to check Dealer Active Status
+-->
+	<select id="retrieveDealerData" resultType="certRequestModel"
+		parameterType="java.lang.String">
+		
+		SELECT RTL.RETLR_ID
+		as dealerNum, replace(RTL.CO_NME,'/','-') as
+		dealerName ,
+		RTL.DUAL_RETLR_ID as
+		dualDealerNum , RTL.RTRN_CNTC_NME as
+		contactName,
+		ADR.STRE_LINE_1_TXT
+		||' '|| ADR.STRE_LINE_2_TXT as
+		dealerStreetLine,
+		ADR.CITY_NME as
+		dealerCity, ADR.PROV_ST_CDE as
+		dealerState,
+		ADR.POST_ZIP_CDE as
+		dealerZip, ADR.CNTY_CDE as dealerCntry
+		FROM
+		CP_DBA.RTL_RETLR_ALL RTL LEFT JOIN CP_DBA.ADR_ADDR_RTL ADR ON RTL.ADDR_ID = ADR.ADDR_ID
+		WHERE
+		trim(RTL.RETLR_ID)=upper(trim(#{dealerNumber})) and RTL.RETLR_ST_CDE!='I'
+	
+	
+	</select>
+<!--  
+
+This Query retrieves  the Request Number for verification from the table
+
+-->
+	<select id="verifyActCertForHWId" parameterType="java.lang.String"
+		resultType="certRequestModel">
+		SELECT CRT.RQST_NUM as requestNum, CRT.RQST_STAT_CDE as
+		statusCode
+		FROM ${db.schema}.CRT_CERT_RQST CRT
+		WHERE
+		CRT.VAS_EQMNT_ID=#{hardwareId} AND RQST_STAT_CDE IN ('ACTIV','PENRV',
+		'STALD')
+	</select>
+<!--  
+
+This Query retrieves  request number and status code for verification from the table
+
+-->
+	<select id="verifyActCertForExtDlr" parameterType="certRequestModel"
+		resultType="certRequestModel">
+		SELECT CRT.RQST_NUM as requestNum, CRT.RQST_STAT_CDE as
+		statusCode
+		FROM ${db.schema}.CRT_CERT_RQST CRT
+		WHERE
+		CRT.VAS_EQMNT_ID=#{hardwareId}
+		AND trim(CRT.DLR_CDE)=trim(#{dealerNum})
+		AND
+		RQST_STAT_CDE IN ('ACTIV','PENRV', 'STALD')
+	</select>
+<!--  
+
+This Query inserts the Certificate request details in the table
+
+-->
+	<insert id="insertCertRequest" parameterType="certRequestModel">
+		<selectKey keyProperty="requestNum" resultType="int" order="BEFORE">
+			SELECT ${db.schema}.RQST_NUM_GEN.NEXTVAL FROM DUAL
+  		</selectKey>
+
+		INSERT INTO ${db.schema}.CRT_CERT_RQST (
+		RQST_NUM, RQST_STAT_CDE,
+		DLR_CDE,
+		CNTC_NAME, CNTC_PHN_NUM, CNTC_EMAIL,
+		DVCE_CDE, VAS_EQMNT_ID,
+		VAS_EQMNT_NAME,
+		CERT_NUM, ADD_BY_USER,UPD_BY_USER,DLR_BRAND)
+		VALUES (
+		#{requestNum},#{statusCode},#{dealerNum},#{contactName},
+		#{contactPhnNum},
+		#{contactEmail},#{deviceType},
+		#{hardwareId},#{deviceName}, #{certNum,
+		jdbcType=INTEGER},#{userId},
+		#{userId},#{dealerBrand,jdbcType=CHAR})
+
+	</insert>
+<!--  
+
+This Query insert the the certificate request status into the table
+
+-->
+	<insert id="insertCertRequestStatus" parameterType="certRequestModel">
+		INSERT INTO
+		${db.schema}.RSH_RQST_STATUS_HIST (
+		STAT_NUM, RQST_NUM, RQST_STAT_CDE,
+		ADD_BY_USER, UPD_BY_USER)
+		VALUES ( ${db.schema}.STAT_NUM_GEN.NEXTVAL,
+		#{requestNum},
+		#{statusCode},#{userId},#{userId})
+
+	</insert>
+<!--  
+This Query retrieves  Certificate request data from the table
+-->
+	<select id="retrieveCertReqData" resultType="certRequestModel"
+		parameterType="java.lang.Integer">
+
+		SELECT
+		CRT.RQST_NUM as requestNum, CRT.RQST_STAT_CDE as
+		statusCode, CRT.DLR_CDE as
+		dealerNum,
+		CRT.CNTC_NAME as contactName,
+		CRT.CNTC_PHN_NUM as contactPhnNum, CRT.CNTC_EMAIL as
+		contactEmail,
+		CRT.DVCE_CDE as deviceType, CRT.VAS_EQMNT_ID as hardwareId,
+		CRT.VAS_EQMNT_NAME as deviceName,
+		CRT.CERT_NUM as certNum, CRT.ADD_BY_USER as certRequestedByUsr
+		FROM
+		${db.schema}.CRT_CERT_RQST CRT WHERE
+		CRT.RQST_NUM=#{requestNum}
+
+	</select>
+	
+<!--  
+This Query retrieves  Certificate requested user data from the table
+-->
+	<select id="retrieveCertRequestUserData" resultType="certRequestModel" 	parameterType="java.lang.Integer">
+
+		SELECT
+		CRT.RQST_NUM as requestNum, CRT.RQST_STAT_CDE as statusCode, 
+		CRT.DLR_CDE as dealerNum, CRT.CNTC_NAME as contactName,
+		CRT.CERT_NUM as certNum, CRT.ADD_BY_USER as certRequestedUser
+		FROM
+		${db.schema}.CRT_CERT_RQST CRT WHERE
+		CRT.RQST_NUM=#{requestNum}
+
+	</select>
+	
+<!--  
+
+This Query retrieves  the comments from the table
+
+-->
+	<select id="retrieveReqCommentData" resultType="commentHistoryModel"
+		parameterType="java.lang.Integer">
+
+		SELECT
+		RCH.CMNT_NUM as commentNum, RCH.RQST_NUM as
+		requestNum, RCH.RQST_CMNT_TXT as
+		commentText, RCH.ADD_BY_USER as
+		userId, RCH.ADD_DTTM as addedDate
+		FROM
+		${db.schema}.RCH_RQST_CMNT_HIST
+		RCH WHERE RCH.RQST_NUM=#{requestNum} ORDER BY RCH.ADD_DTTM DESC
+
+	</select>
+<!--  
+
+This Query inserts new comments into  the table
+
+-->
+	<insert id="insertCertRequestComment" parameterType="commentHistoryModel">
+		INSERT INTO
+		${db.schema}.RCH_RQST_CMNT_HIST (
+		CMNT_NUM, RQST_NUM, RQST_CMNT_TXT,
+		ADD_BY_USER, UPD_BY_USER)
+		VALUES (${db.schema}.CMNT_NUM_GEN.NEXTVAL,
+		#{requestNum},
+		#{commentText},#{userId},#{userId})
+
+	</insert>
+<!--  
+
+This Query updates the Certificate Request Details in the table
+
+-->
+	<update id="updateCertRequest" parameterType="certRequestModel">
+		UPDATE
+		${db.schema}.CRT_CERT_RQST SET
+		CERT_NUM=#{certNum},
+		RQST_STAT_CDE=#{statusCode},
+		UPD_BY_USER=#{userId},
+		UPD_DTTM=SYSDATE
+		WHERE
+		RQST_NUM=#{requestNum}
+	
+  </update>
+
+
+</mapper>
+
+
+
+
+

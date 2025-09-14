@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	
+	<constant name="struts.convention.redirect.to.slash" value="false"></constant>
+	
+ 	<package name="requestSearch" extends="struts-default,json-default" namespace="/">
+    </package>
+    
+    <package name="ecrms-default" extends="json-default">
+		<interceptors>
+		<interceptor name="checkSession" class="com.vwoa.ecrms.util.SessionExpiryInterceptor"/>
+			<interceptor-stack name="eCRMS-Stack">
+				<interceptor-ref name="checkSession" />
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">ERROR</param>
+				</interceptor-ref>
+				<interceptor-ref name="timer" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="eCRMS-Stack" />
+	
+		<global-results>
+			<result name="error">/WEB-INF/content/error.jsp</result>
+			<result name="SESSION_EXPIRED">/WEB-INF/content/login/sessionTimeOut.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+	</package>
+    
+</struts>
