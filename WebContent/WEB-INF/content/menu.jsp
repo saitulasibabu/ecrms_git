@@ -74,6 +74,8 @@ function openEshopDialogForCreate(){
 </s:if>
 
 
+<%-- <li><sj:a href="#" onclick="window.open('%{#session.eshopLink}')" targets="content" indicator="loadingInd"><s:property value="getText('menu.goToEShop')"/></sj:a></li> --%>
+<li><sj:a href="#" onclick="window.open('%{#session.eshopLink}', 'myWindow')" indicator="loadingInd"><s:property value="getText('menu.goToEShop')"/></sj:a></li>
 
 <s:if test='#session.userProfile.userRoleList.contains("ECRMS_ADMIN")'>
 <li><sj:a href="administration/loadIndex.action" cssClass="menubar" targets="content" indicator="loadingInd"><s:property value="getText('menu.administration')"/></sj:a></li>
