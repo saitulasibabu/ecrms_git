@@ -296,11 +296,20 @@ $.subscribe('completechecks',function(event,ref)
 <s:if test='#session.userProfile.userRoleList.contains("ECRMS_SUPER_USER")||#session.userProfile.userRoleList.contains("ECRMS_ADMIN")'>
 	<s:if test='#session.userProfile.userRoleList.contains("ECRMS_ADMIN")'>
 	   <s:if test='%{certRequestModel.statusCode.equals("PENRV") || certRequestModel.statusCode.equals("STALD")}'>
-		<div class="span-2 last" style="padding:17px;">
+
+		<s:if test='%{#session.userId == certRequestModel.certRequestedByUsr}'>
+			<div class="span-10" style="color: red; font-weight: bold; margin-bottom: 10px;">
+					<s:property value="getText('message.cannotApproveOwnRequest')" />
+			</div>
+		</s:if>
+		<s:else>
+			<div class="span-2 last" style="padding:17px;">
 			<sj:a button="true" id="approveButton" cssClass="span-2" cssStyle="float: left;width:100px;" onclick="return approveCertRequest()" tabindex="3" >
 				<s:property value="getText('button.approve')" />
 			</sj:a>
-		</div>
+			</div>
+		</s:else>
+
 	</s:if>	</s:if>		
 	<div class="span-2 last" style="padding:17px;">
 		<sj:a button="true" id="stallButton" cssClass="span-2" cssStyle="float:left;width:100px" onclick="return stallCertRequest()" tabindex="4">
