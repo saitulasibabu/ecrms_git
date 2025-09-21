@@ -296,7 +296,7 @@ $.subscribe('completechecks',function(event,ref)
 <s:if test='#session.userProfile.userRoleList.contains("ECRMS_SUPER_USER")||#session.userProfile.userRoleList.contains("ECRMS_ADMIN")'>
 	<s:if test='#session.userProfile.userRoleList.contains("ECRMS_ADMIN")'>
 	   <s:if test='%{certRequestModel.statusCode.equals("PENRV") || certRequestModel.statusCode.equals("STALD")}'>
-		consol.log("In Admin Approve Button");
+		console.log("In Admin Approve Button");
 		
 		<s:if test='%{#session.userId == certRequestModel.certRequestedByUsr}'>
 			<div class="span-10" style="color: red; font-weight: bold; margin-bottom: 10px;">
